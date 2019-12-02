@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body  {
+    background: #f3f3f3;
+    font-family: Georgia, 'Times New Roman', Times, serif;    
+}
+#contenedor {
+    width: 95%;
+    max-width: 900px;
+    margin: auto;
+}
+header .logo{
+    background-color: #313131;
+    padding: 60px 50px;       
+}
+header .logo h1{
+    align-items: center;
+    position: absolute;
+    width: 310px;
+    height: 103px;
+    left: 550px;
+    top: 15px;
+    background: url("menuImg/Logo-Pocket308x100.png");
+}
+form .barra-busqueda{
+    box-align: center;
+    background-color: white;
+    padding: 0 10px;    
+}
+ul, ol {
+    list-style: none;    
+}
+.navi #menu{
+    float: left;
+    display: block;
+    position: initial;
+    width: 36px;
+    height: 35px;
+    left: 190px;
+    top: 125px;
+    background: url("menuImg/menu-icon36x36.png"); 
+}
+.navi #menu:hover{
+    background: url("menuImg/menu-icon36x36B.png");
+    
+}
+.subnavi li a {
+    color: #313131;
+    background-color: #ef6a2f;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+.subnavi li a:hover {
+    background-color: #f3a07d;
+}
+.navi > ul {
+    float: left;
+    
+}
+.pie-pagina{
+    width: 95%;
+    max-width: 900px;
+    padding: 100px;
+    margin: auto;
+    background: #313131;
+}
+/*.navi >ul:hover li{
+    display: block;
+}*/
