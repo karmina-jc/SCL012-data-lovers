@@ -3,72 +3,99 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body  {
     background: #f3f3f3;
     font-family: Georgia, 'Times New Roman', Times, serif;    
 }
-#contenedor {
+header {
+    display: flex;
+    flex-direction: column;
     width: 95%;
     max-width: 900px;
     margin: auto;
 }
 header .logo{
+    display: flex;
+    justify-content: center;
     background-color: #313131;
-    padding: 60px 50px;       
+    padding: 30px 30px;       
 }
 header .logo h1{
-    align-items: center;
-    position: absolute;
+    display: flex;
+    justify-content: space-around;
     width: 310px;
     height: 103px;
     left: 550px;
     top: 15px;
     background: url("menuImg/Logo-Pocket308x100.png");
 }
-form .barra-busqueda{
-    box-align: center;
+nav{
+    display: flex;
+    justify-items: stretch;
+}
+nav .barra-busqueda{
+    display: flex;
+    justify-self: center;
     background-color: white;
-    padding: 0 10px;    
+    padding: 5px 20px; 
+    border: none;
 }
-ul, ol {
-    list-style: none;    
-}
-.navi #menu{
-    float: left;
-    display: block;
-    position: initial;
+
+nav .menu{
+    display: flex;
+    justify-content: flex-start;
     width: 36px;
     height: 35px;
     left: 190px;
     top: 125px;
-    background: url("menuImg/menu-icon36x36.png"); 
+    background: url("menuImg/menu-icon36x36.png");     
 }
-.navi #menu:hover{
-    background: url("menuImg/menu-icon36x36B.png");
-    
+.menu:hover{
+    background: url("menuImg/menu-icon36x36B.png");    
 }
-.subnavi li a {
+ul, ol {
+    list-style: none;
+} 
+.subnavi li a{
     color: #313131;
     background-color: #ef6a2f;
     text-decoration: none;
     padding: 10px 15px;
-    display: block;
+    display: none;            
 }
-.subnavi li a:hover {
+.subnavi li a:hover{
     background-color: #f3a07d;
 }
-.navi > ul {
-    float: left;
-    
+nav > ul{
+    float: left; 
 }
-.pie-pagina{
+nav .menu:hover > ul{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    display: flex;
+    align-content: flex-end;
     width: 95%;
     max-width: 900px;
     padding: 100px;
     margin: auto;
     background: #313131;
 }
-/*.navi >ul:hover li{
-    display: block;
-}*/
+section{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 900px;
+    margin: auto;    
+}
+aside{
+    border: 1px solid black;
+    height: 300px;
+    width: 150px;
+}
+main{
+    border: 1px solid black;
+    height: 750px;
+    width: 700px;
+}
