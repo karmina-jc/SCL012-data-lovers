@@ -8,6 +8,7 @@ import POKEMON from './data/pokemon/pokemon.js';
 
 console.log(POKEMON);
 
+
 /*
  * console.log(POKEMON);
  * console.log(LoL);
