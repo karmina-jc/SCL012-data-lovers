@@ -1,15 +1,16 @@
 /**
  * import POKEMON from './data/pokemon/pokemon.js'
- * import LoL from './data/lol/lol.js'
- * import POTTER from './data/potter/potter.js'
  */
 import POKEMON from './data/pokemon/pokemon.js'
-
 console.log(POKEMON);
+/* muestra los objetos */
+const section = document.getElementById("todos");
+//section.innerHTML = Object.values(POKEMON[1]); // muestra los datos 
 
+for (let i = 0; i < POKEMON.length; i++) {
+    let parrafo = document.createElement('div'); // crea paragrafo
+    let datosPokemon = document.createTextNode(POKEMON[i].name);
+    parrafo.appendChild(datosPokemon);
+    section.appendChild(parrafo);
+} 
 
-/*
- * console.log(POKEMON);
- * console.log(LoL);
- * console.log(POTTER)
-*/
