@@ -12,5 +12,6 @@ for (let i = 0; i < POKEMON.length; i++) {
     let datosPokemon = document.createTextNode(POKEMON[i].name);
     parrafo.appendChild(datosPokemon);
     section.appendChild(parrafo);
+
 } 
 
