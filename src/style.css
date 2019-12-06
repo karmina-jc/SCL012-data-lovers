@@ -10,8 +10,6 @@ body  {
 header {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    max-width: 900px;
     margin: auto;
 }
 header .logo{
@@ -61,7 +59,7 @@ ul, ol {
     background-color: #ef6a2f;
     text-decoration: none;
     padding: 10px 15px;
-    display: none;            
+    display: none            
 }
 .subnavi li a:hover{
     background-color: #f3a07d;
@@ -73,29 +71,34 @@ nav .menu:hover > ul{
     display: flex;
     flex-direction: column;
 }
-footer{
-    display: flex;
-    align-content: flex-end;
-    width: 95%;
-    max-width: 900px;
-    padding: 100px;
-    margin: auto;
-    background: #313131;
-}
 section{
     display: flex;
     justify-content: space-between;
-    width: 95%;
-    max-width: 900px;
-    margin: auto;    
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    min-width: 500px;
+}
+main .indPkm{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
 }
 aside{
     border: 1px solid black;
+    margin: 5px 10px;
     height: 300px;
-    width: 150px;
+    min-width: 150px;
 }
-main{
-    border: 1px solid black;
-    height: 750px;
-    width: 700px;
+footer{
+    display: flex;
+    align-content: flex-end;
+    padding: 100px;
+    margin: auto;
+    background: #313131;
 }
