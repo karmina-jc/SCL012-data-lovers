@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <!-- menu-->
     <header>
-      <div class="logo">
-        <h1></h1>        
+        <nav> 
+           <div class="logo"> 
+              <img src="menuImg/Logo-Pocket308x100.png"> 
       </div>
-      <nav> 
+      <!-- menu-->
+      <div class="menuBar">
         <ul>
           <li class="menu"><a href="#"></a></li>
             <ul class="subnavi">
@@ -22,7 +23,6 @@
               <li><a href="">Contacto</a></li>
             </ul>
         </ul>
-        <div>
           <!--search bar-->
           <form action="">
             <input type="search" class="barra-busqueda" id="barraBusqueda" placeholder="Buscar">
@@ -35,23 +35,40 @@
     <section id="todos">
       <!-- filter sidebar -->
       <aside>
-        <p>Filtrar por:</p>
-         <ul>
-           <li><a href="#" id="filterType">Tipo</a></li>
-           <li><a href="#" id="filterStrenght">Fortaleza</a></li>
-           <li><a href="#" id="filterWeakness">Debilidad</a></li>
-           <li><a href="#" id="filtermultipliers">Multiplicadores</a></li>
+        <h4 style="color: #ef6a2f;">FILTRAR POR:</h4>
+         <ul class="filterList">
+            <input type="checkbox" id="filterType" class="checkbox">Tipo</br>
+            <input type="checkbox" id="filterStrenght" class="checkbox">Fortaleza</br>
+            <input type="checkbox" id="filterWeakness" class="checkbox">Debilidad</br> 
+           <input type="checkbox" id="filterMultipliers" class="checkbox">Multiplicadores</br>
+           <input type="checkbox" id="filterSpawnChance" class="checkbox">Spawn chance
          </ul>
-
       </aside>
-        
-      <main>
-          
-      </main>
+      <!-- Listado de Pokemons-->
+      <div class="title"><h1>Encuentra tu Pokemon!</h1></div>
+       <main id="all">
+       </main>    
+             
     </section>
 
     
     <footer>
+      <div class="footerDiv1">
+        <h3>PokePoket</h3>
+          <p><a href="#">Noticias</a></p>
+          <p><a href="#">Contacto</a></p>
+      </div>
+      <div class="footerDiv2">
+          <h3>Siguenos</h3>
+            <a href="#"><img src="menuImg/YTicon.png" class="socialIcon"></a>
+            <a href="#"><img src="menuImg/insta-icon.png" class="socialIcon"></a>
+            <a href="#"><img src="menuImg/FBicon.png" class="socialIcon"></a>
+        </div>
+        <div class="footerDiv3">
+            <h3>Legalidad</h3>
+              <p><a href="#">Terminos y condiciones</a></p>
+              <p><a href="#">Privacidad</a></p>
+          </div>
 
     </footer>
     <div id="root"></div>
