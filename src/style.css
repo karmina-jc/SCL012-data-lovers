@@ -6,47 +6,61 @@
 body  {
     background: #f3f3f3;
     font-family: Georgia, 'Times New Roman', Times, serif;    
+    
 }
+a {
+    text-decoration: none;
+    font-family: Rajdhani Regular;
+}
+/* PARAGRAPH TYPOGRAPHY */
+@font-face {
+    font-family: 'Rajdhani Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rajdhani Regular'), url('Rajdhani-Regular.woff') format('woff');
+    }
+/* HEADINGS TYPOGRAPHY */
+@font-face {
+    font-family: 'Play Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Play Regular'), url('Play-Regular.woff') format('woff');
+    }
+@font-face {
+    font-family: 'Play Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Play Bold'), url('Play-Bold.woff') format('woff');
+    }
+    P {
+        font-family: Rajdhani Regular;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Play;
+        font-weight: bold;
+    }
+/* MENU SETTINGS */ 
 header {
-    display: flex;
-    flex-direction: column;
     margin: auto;
+    background-color: #313131;
+    display: flex; 
+    flex-direction: column;
 }
-header .logo{
+.menuBar {
+    display: flex;
+    flex-direction: row;
+    margin-left: 14%;
+}
+.logo {
     display: flex;
     justify-content: center;
-    background-color: #313131;
-    padding: 30px 30px;       
+    padding: 15px 15px;       
 }
-header .logo h1{
-    display: flex;
-    justify-content: space-around;
-    width: 310px;
-    height: 103px;
-    left: 550px;
-    top: 15px;
-    background: url("menuImg/Logo-Pocket308x100.png");
-}
-nav{
-    display: flex;
-    justify-items: stretch;
-}
-nav .barra-busqueda{
-    display: flex;
-    justify-self: center;
-    background-color: white;
-    padding: 5px 20px; 
-    border: none;
-}
-
 nav .menu{
-    display: flex;
-    justify-content: flex-start;
     width: 36px;
     height: 35px;
-    left: 190px;
-    top: 125px;
-    background: url("menuImg/menu-icon36x36.png");     
+    background: url("menuImg/menu-icon36x36.png");   
+    margin-bottom: 20px;  
 }
 .menu:hover{
     background: url("menuImg/menu-icon36x36B.png");    
@@ -54,15 +68,24 @@ nav .menu{
 ul, ol {
     list-style: none;
 } 
+.subnavi {
+    display: none;
+    background-color: #ef6a2f;
+    min-width: 160px;
+    z-index: 1;
+}
 .subnavi li a{
     color: #313131;
     background-color: #ef6a2f;
     text-decoration: none;
     padding: 10px 15px;
-    display: none            
+    display: block;            
 }
-.subnavi li a:hover{
+.menuBar:hover .subnavi li a:hover{
     background-color: #f3a07d;
+}
+.menuBar:hover .subnavi {
+    display: block;
 }
 nav > ul{
     float: left; 
@@ -71,34 +94,82 @@ nav .menu:hover > ul{
     display: flex;
     flex-direction: column;
 }
+nav .barra-busqueda {
+    width: 100%;
+    background-color: white;
+    padding: 5px 20px; 
+    border: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+/* POKEMMON SECTION */
 section{
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+    margin: 3%;
+}
+.title {
+    display: flex;
+    flex-flow: row wrap;
+    order: 0;
 }
 main{
     display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap;
-    min-width: 500px;
+    align-self: flex-start;
+    flex-flow: row wrap;
 }
-main .indPkm{
+.indPkm{
     display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
+    flex-flow: column wrap;
+    align-items: stretch;
     border: 1px solid black;
 }
 aside{
-    border: 1px solid black;
     margin: 5px 10px;
-    height: 300px;
-    min-width: 150px;
+    height: 50%;
+    min-width: 15%;
+    background-color: #313131;
+    padding: 2%;
+    display: block;
+    color: #ef6a2f;
+    font-family: Rajdhani;
 }
-footer{
+.filterList {
+
+}
+/* FOOTER SETTINGS */
+footer {
+    color: #8f8f8f;
     display: flex;
     align-content: flex-end;
-    padding: 100px;
+    justify-content: space-between;
+    padding: 2% 10%;
     margin: auto;
     background: #313131;
+    line-height: 1.6em;
+}
+footer a {
+    color: #8f8f8f;
+}
+.footerDiv1  .footerDiv2 .footerDiv3{
+    width: 100%;
+    margin: 2%;
+}
+.socialIcon {
+    margin-right: 1%;
+}
+/* pop up */
+.pkmPopup {
+width: 70%;
+height: 400px;
+background-color: #8f8f8f;
+display: none;
+position: fixed;
+z-index: 1;
+}
+.modalContent {
+width: 70%;
+height: 400px;
+border: 1px solid #888;
+background-color: #8f8f8f;
 }
