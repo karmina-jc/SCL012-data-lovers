@@ -12,23 +12,23 @@
         <nav> 
            <div class="logo"> 
               <img src="menuImg/Logo-Pocket308x100.png"> 
-      </div>
+            </div>
       <!-- menu-->
-      <div class="menuBar">
-        <ul>
-          <li class="menu"><a href="#"></a></li>
-            <ul class="subnavi">
-              <li><a href="">Pokemones</a></li>                         
-              <li><a href="">Nosotros</a></li>
-              <li><a href="">Contacto</a></li>
-            </ul>
-        </ul>
-          <!--search bar-->
-          <form action="">
+           <div class="menuBar">
+              <img src="menuImg/menu-icon36x36.png" class="menuIcon">
+            
+        <!--search bar-->
+        <form action="">
             <input type="search" class="barra-busqueda" id="barraBusqueda" placeholder="Buscar">
           </form>
-        </div>  
-              
+              <div class="subnavi">
+                 <ul >
+                  <li><a href="">Pokemones</a></li>                         
+                  <li><a href="">Nosotros</a></li>
+                  <li><a href="">Contacto</a></li>
+                 </ul>
+              </div>
+          </div>
       </nav>                
     </header> 
 
@@ -44,13 +44,23 @@
            <input type="checkbox" id="filterSpawnChance" class="checkbox">Spawn chance
          </ul>
       </aside>
+      <!-- Titulo -->
+      
+      
       <!-- Listado de Pokemons-->
-      <div class="title"><h1>Encuentra tu Pokemon!</h1></div>
-       <main id="all">
-       </main>    
-             
-    </section>
+       <main id="all"> </main>  
+       <div class="title"><h1>Encuentra tu Pokemon!</h1></div>
+       <div id="sortData" class="sortData">
+         <select>
+            <option selected>Ordenar por:</option>
+            <option value="aToZ" id="sortAtoZ">Alfabeto A-Z</option>
+            <option value="ZtoA" id="sortZtoA">Alfabeto Z-A</option>
+            <option value="number" id="sortDesc">Numero decreciente</option>
 
+         </select>
+        
+        </div>
+    </section>
     
     <footer>
       <div class="footerDiv1">
