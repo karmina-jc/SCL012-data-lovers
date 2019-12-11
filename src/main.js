@@ -1,13 +1,14 @@
 /**
  * import POKEMON from './data/pokemon/pokemon.js'
  */
-import POKEMON from './data/pokemon/pokemon.js'
-console.log(POKEMON);
-/* muestra los objetos */
-const section = document.getElementById("todos");
-const main = document.getElementById("all")
 //section.innerHTML = Object.values(POKEMON[1]); // muestra los datos 
+import POKEMON from './data/pokemon/pokemon.js'
+console.log("database", POKEMON);
+/* muestra los objetos */
+//const section = document.getElementById("todos");
+import * as data from './data.js';
 
+const main = document.getElementById("all");
 for (let i = 0; i < POKEMON.length; i++) {
     let newBtn = document.createElement('button'); // crea boton
     newBtn.setAttribute('class', 'indPkm'); //da clase al boton
@@ -32,25 +33,22 @@ let multipliersFilter = document.getElementById("filterMultipliers");
 multipliersFilter.addEventListener ('click', 
 function clickMultipliers() {
 const filterMultipliers = POKEMON.filter(POKEMON => (POKEMON.multipliers >= 0 && POKEMON.multipliers <= 1.5));
-console.log(filterMultipliers);
+console.log("filtro multipliers", filterMultipliers);
+
 });
 // filtro por spawn chance
 let spawnChanceFilter = document.getElementById("filterSpawnChance");
 spawnChanceFilter.addEventListener ('click', 
 function clickSpawnChance() {
 const filterSpawn = POKEMON.filter(POKEMON => (POKEMON.multipliers >= 0 && POKEMON.multipliers <= 1.5));
-console.log(filterSpawn);
+console.log("filtro por chance", filterSpawn);
 });
-// click a la imagen
-let clickImage = document.getElementById('indPkm');
-clickImage.addEventListener ('click', 
-function clickOnInmage () {
-let newDiv = document.createElement('div');
-newDiv.setAttribute('class', 'pkmPopup');
-newDiv.appendChild(indPkm);
-let modalContent = document.createElement('div');
-modalContent.setAttribute('class', 'modalContent');
-modalContent.appendChild(pkmPopup);
-document.getElementById('modalContent').style.display = 'block';
-console.log(newDiv);
-})
+
+
+
+
+
+
+
+
+
