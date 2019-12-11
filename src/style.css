@@ -12,14 +12,14 @@ a {
     text-decoration: none;
     font-family: Rajdhani Regular;
 }
-/* PARAGRAPH TYPOGRAPHY */
+/* PARAGRAPH TYPOGRAPHY 
 @font-face {
     font-family: 'Rajdhani Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Rajdhani Regular'), url('Rajdhani-Regular.woff') format('woff');
     }
-/* HEADINGS TYPOGRAPHY */
+/* HEADINGS TYPOGRAPHY 
 @font-face {
     font-family: 'Play Regular';
     font-style: normal;
@@ -31,7 +31,7 @@ a {
     font-style: normal;
     font-weight: normal;
     src: local('Play Bold'), url('Play-Bold.woff') format('woff');
-    }
+    }*/
     P {
         font-family: Rajdhani Regular;
     }
@@ -85,7 +85,9 @@ ul, ol {
     background-color: #f3a07d;
 }
 .menuBar:hover .subnavi {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
 }
 nav > ul{
     float: left; 
@@ -117,12 +119,14 @@ main{
     display: flex;
     align-self: flex-start;
     flex-flow: row wrap;
+    border: 1px solid black;
 }
 .indPkm{
     display: flex;
     flex-flow: column wrap;
     align-items: stretch;
     border: 1px solid black;
+    margin: 5px;
 }
 aside{
     margin: 5px 10px;
@@ -134,8 +138,32 @@ aside{
     color: #ef6a2f;
     font-family: Rajdhani;
 }
-.filterList {
-
+aside .btn{
+    color: #ef6a2f;
+    padding: 5px 10px;
+    background-color: #313131;
+    display: flex;
+    justify-self: flex-start;
+}
+aside .btn:hover{
+    background-color: #616161;    
+}
+/*aside .btn:hover .typeOption a{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}*/
+aside .typeOption button{
+    font-family: Rajdhani;
+    text-decoration: none;
+    background: #313131;
+    color: #ef6a2f;
+    display: flex;
+    justify-self: flex-end;
+    border: none;        
+}
+aside .typeOption button:hover{
+    background-color: #616161;
 }
 /* FOOTER SETTINGS */
 footer {

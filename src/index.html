@@ -37,11 +37,31 @@
       <aside>
         <h4 style="color: #ef6a2f;">FILTRAR POR:</h4>
          <ul class="filterList">
-            <input type="checkbox" id="filterType" class="checkbox">Tipo</br>
-            <input type="checkbox" id="filterStrenght" class="checkbox">Fortaleza</br>
-            <input type="checkbox" id="filterWeakness" class="checkbox">Debilidad</br> 
-           <input type="checkbox" id="filterMultipliers" class="checkbox">Multiplicadores</br>
-           <input type="checkbox" id="filterSpawnChance" class="checkbox">Spawn chance
+            <li><button id="filterType" class="btn">Tipo</button></li>
+            <ul class = "typeOption">
+              <li><button id="typeGrass" value="Grass">Planta</button></li>
+              <li><button id="typePoison" value="Poison">Veneno</button></li>
+              <li><button id="typeFire" value="Fire">Fuego</button></li>
+              <li><button id="typeIce" value="Ice">Hielo</button></li>
+              <li><button id="typeFlying" value="Flying">Volador</button></li>
+              <li><button id="typePsychic" value="Psychic">Psíquico</button></li>
+              <li><button id="typeWater" value="Water">Agua</button></li>
+              <li><button id="typeGround" value="Ground">Tierra</button></li>
+              <li><button id="typeRock" value="Rock">Roca</button></li>
+              <li><button id="typeElectric" value="Electric">Electrico</button></li>
+              <li><button id="typeBug" value="Bug">Bicho</button></li>
+              <li><button id="typeNormal" value="Normal">Normal</button></li>
+              <li><button id="typeFighting" value="Fighting">Lucha</button></li>
+              <li><button id="typeFairy" value="Fairy">Hada</button></li>
+              <li><button id="typeGhost" value="Ghost">Fantasma</button></li>
+              <li><button id="typeDark" value="Dark">Siniestro</button></li>
+              <li><button id="typeSteel" value="Steel">Acero</button></li>
+              <li><button id="typeDragon" value="Dragon">Dragón</button></li>
+            </ul> 
+            <li><button id="filterStrenght" class="btn">Fortaleza</button></li>
+            <li><button id="filterWeakness" class="btn">Debilidad</button></li>
+            <li><button id="filterMultipliers" class="btn">Multiplicadores</button></li>
+            <li><button id="filterSpawnChance" class="btn">Spawn chance</button></li>
          </ul>
       </aside>
       <!-- Listado de Pokemons-->
@@ -50,8 +70,9 @@
        </main>    
              
     </section>
-
-    
+    <section class="overlay" id="overlay">
+        
+    </section>    
     <footer>
       <div class="footerDiv1">
         <h3>PokePoket</h3>

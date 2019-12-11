@@ -1,6 +1,14 @@
 /* Manejo de data */
+import POKEMON from './data/pokemon/pokemon.js'
 
-// esta es una función de ejemplo
+
+// Funcion fultrado
+export function filtrado (valor){
+  let pkmType = POKEMON.filter(pkm => (pkm.type.includes(valor)));
+  return pkmType;   
+}; 
+
+
 /*
 export const tipoPlanta = POKEMON.filter(POKEMON.type === 'Grass') => {
   return tipoPlanta;
