@@ -9,19 +9,29 @@ export function filtrado (valor){
 }; 
 
 
-/*
-export const tipoPlanta = POKEMON.filter(POKEMON.type === 'Grass') => {
-  return tipoPlanta;
-};
-*/
-
-
-/*
-export const example = () => {
-  return 'example';
+// sort by numero decreciente
+export function sortBy (dato){
+  if (dato === "number"){
+    POKEMON.sort(function sortNumDesc (a, b){
+    return b.num - a.num;
+  });  
+  }
+  if (dato == "aToZ"){
+      POKEMON.sort(function sortNameAZ (a, b) {
+      if (a.name < b.name) {return -1;}
+      if (a.name > b.name) {return 1};
+    });  
+  }
+  if (dato == "ZtoA"){
+      POKEMON.sort(function sortNameZA (a, b) {
+      if (b.name < a.name) {return -1;}
+      if (b.name > a.name) {return 1};
+    });
+  }  
 }
-*/
-/*
-export const imagenes = POKEMON.filter(item => (item.img)) => {
-  return imagenes;
-}*/
+
+
+
+
+
+

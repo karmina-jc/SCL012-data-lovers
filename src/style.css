@@ -31,8 +31,8 @@ a {
     font-style: normal;
     font-weight: normal;
     src: local('Play Bold'), url('Play-Bold.woff') format('woff');
-    }*/
-    P {
+    }
+    P, select {
         font-family: Rajdhani Regular;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -46,63 +46,61 @@ header {
     display: flex; 
     flex-direction: column;
 }
-.menuBar {
-    display: flex;
-    flex-direction: row;
-    margin-left: 14%;
+nav {
+    background-color: #313131;
 }
 .logo {
     display: flex;
     justify-content: center;
     padding: 15px 15px;       
 }
-nav .menu{
+.menuBar {
+    display: flex;
+    flex-direction: row;
+    margin-left: 14%;
+    position: relative;
+}
+.menuIcon {
     width: 36px;
     height: 35px;
-    background: url("menuImg/menu-icon36x36.png");   
     margin-bottom: 20px;  
-}
-.menu:hover{
-    background: url("menuImg/menu-icon36x36B.png");    
+    position: relative;
+    max-width: 40px;
 }
 ul, ol {
     list-style: none;
 } 
 .subnavi {
-    display: none;
+    display: none;   
+    position: absolute;
+    margin-top: 55px;
     background-color: #ef6a2f;
     min-width: 160px;
     z-index: 1;
-}
-.subnavi li a{
+}  
+.subnavi li a {
+    display: block;  
     color: #313131;
     background-color: #ef6a2f;
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;            
+    padding: 10px 15px;       
 }
-.menuBar:hover .subnavi li a:hover{
-    background-color: #f3a07d;
+.subnavi a:hover{
+    background-color: #f39368; 
 }
 .menuBar:hover .subnavi {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
 }
-nav > ul{
-    float: left; 
-}
-nav .menu:hover > ul{
-    display: flex;
-    flex-direction: column;
-}
 nav .barra-busqueda {
-    width: 100%;
+    width: 60%;
     background-color: white;
     padding: 5px 20px; 
     border: none;
     margin-left: 15px;
     margin-top: 5px;
+    position: absolute;
 }
 /* POKEMMON SECTION */
 section{
@@ -112,10 +110,12 @@ section{
 }
 .title {
     display: flex;
-    flex-flow: row wrap;
-    order: 0;
+    align-self: flex-start;
+    order: 1;
+    align-self: flex-start;
+   
 }
-main{
+main {
     display: flex;
     align-self: flex-start;
     flex-flow: row wrap;
@@ -165,6 +165,44 @@ aside .typeOption button{
 aside .typeOption button:hover{
     background-color: #616161;
 }
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay.activo{
+    display: flex;
+  }
+  .overlay img{
+    max-width: 100%;
+  }
+  .overlay p{
+    display: block;
+    background: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .contImg{
+    position: relative;
+  }
+  .contImg button{
+    font-size: 15px;
+    border: none;
+    cursor:pointer;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+  }
+
 /* FOOTER SETTINGS */
 footer {
     color: #8f8f8f;
@@ -186,18 +224,11 @@ footer a {
 .socialIcon {
     margin-right: 1%;
 }
-/* pop up */
-.pkmPopup {
-width: 70%;
-height: 400px;
-background-color: #8f8f8f;
-display: none;
-position: fixed;
-z-index: 1;
-}
-.modalContent {
-width: 70%;
-height: 400px;
-border: 1px solid #888;
-background-color: #8f8f8f;
+
+.sortData select {
+    color: #ef6a2f;
+    background-color: #313131;
+    padding: 2%;
+    margin-top: 5px;
+
 }

@@ -1,6 +1,8 @@
 import POKEMON from './data/pokemon/pokemon.js';
 console.log(POKEMON);
 import{filtrado}from './data.js';
+import{sortBy}from './data.js';
+
 /* muestra los objetos */
 //const section = document.getElementById("todos");
 const main = document.getElementById("all")
@@ -10,7 +12,8 @@ const fortaleza = ["Ground", "Rock", "water"]
 function createCard (data){
     for (let i = 0; i < data.length; i++){
         let newBtn = document.createElement('button'); // crea boton
-        newBtn.setAttribute('class', 'indPkm'); //da clase al boton
+        newBtn.setAttribute('class','indPkm'); //da clase al boton
+        newBtn.setAttribute("name", data[i].name)
         let newImg = document.createElement('img'); //crea una imagen
         newImg.setAttribute('src', data[i].img); //toma la source de la imagen
         newBtn.appendChild(newImg); //dice que la imagen esta dentro del boton
@@ -61,11 +64,16 @@ function createOverCard(data){
         
         overlay.appendChild(divOne);
     }
+    document.querySelector(".contImg button").addEventListener("click", () =>{
+        overlay.innerHTML = ""
+        overlay.classList.remove("activo")
+    })
 }  
-
+//todos por defecto
 for (let i = 0; i < POKEMON.length; i++) {
     let newBtn = document.createElement('button'); // crea boton
     newBtn.setAttribute('class', 'indPkm'); //da clase al boton
+    newBtn.setAttribute("name", POKEMON[i].name)
     let newImg = document.createElement('img'); //crea una imagen
     let imgPokemon = (POKEMON[i].img); // toma la imagen desde la base de datos
     newImg.setAttribute('src', imgPokemon); //toma la source de la imagen
@@ -83,9 +91,6 @@ for (let i = 0; i < POKEMON.length; i++) {
 }
 
 // Filtrado
-const btnGrass = document.getElementById("typeGrass");
-const btnPoison = document.getElementById("typePoison");
-const btnFire = document.getElementById("typeFire");
 
 document.querySelectorAll(".typeOption button").forEach((elemento) => {
     elemento.addEventListener("click", () => {
@@ -98,16 +103,29 @@ document.querySelectorAll(".typeOption button").forEach((elemento) => {
 });
 
 //listener para las imagenes
-document.querySelectorAll(".indPkm").forEach((elemento)=>{
+document.querySelectorAll("#all .indPkm").forEach((elemento)=>{
     elemento.addEventListener("click", () => {
-        overlay.classList.add('activo')
-        createOverCard()
+        console.log("onCLick()");
+        let imgOver = elemento.getAttribute("name");
+        function filtroOver (valor){
+            return POKEMON.filter(pkm => (pkm.name === valor))}
+        let pkmOver = filtroOver(imgOver);
+        overlay.classList.add('activo');
+        createOverCard(pkmOver);
     })
 });
 
-// eventListener boton de cerrar
+const sortData = document.getElementById("sortData");
 
-document.querySelector(".contImg button").addEventListener("click", () =>{
-    overlay.classList.remove("activo")
+sortData.addEventListener("change", () => {
+    let dato = document.getElementById("sortData").value;
+    main.innerHTML = "";
+    let pkmSort = sortBy(dato);
+    console.log(pkmSort)
+    
 })
+/*btnTipo = document.getElementById("filterType")
 
+btnTipo.addEventListener("clik", () =>{
+
+}) */
