@@ -12,14 +12,14 @@ a {
     text-decoration: none;
     font-family: Rajdhani Regular;
 }
-/* PARAGRAPH TYPOGRAPHY 
+/*PARAGRAPH TYPOGRAPHY */
 @font-face {
     font-family: 'Rajdhani Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Rajdhani Regular'), url('Rajdhani-Regular.woff') format('woff');
     }
-/* HEADINGS TYPOGRAPHY 
+/* HEADINGS TYPOGRAPHY */
 @font-face {
     font-family: 'Play Regular';
     font-style: normal;

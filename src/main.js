@@ -1,8 +1,7 @@
 import POKEMON from './data/pokemon/pokemon.js';
-console.log(POKEMON);
-import{filtradoTypo}from './data.js';
-import{filtradoWeakness}from './data.js';
-import{sortBy}from './data.js';
+import {filtradoTypo} from './data.js';
+import {filtradoWeakness} from './data.js';
+import {sortBy} from './data.js';
 
 /* muestra los objetos */
 //const section = document.getElementById("todos");
@@ -10,11 +9,11 @@ const main = document.getElementById("all")
 const overlay = document.getElementById("overlay");
 const fortaleza = ["Ground", "Rock", "water"]
 
-function createCard (data){
-    for (let i = 0; i < data.length; i++){
+function createCard(data) {
+    for (let i = 0; i < data.length; i++) {
         let newBtn = document.createElement('button'); // crea boton
         newBtn.setAttribute('class','indPkm'); //da clase al boton
-        newBtn.setAttribute("name", data[i].name)
+        newBtn.setAttribute('name', data[i].name)
         let newImg = document.createElement('img'); //crea una imagen
         newImg.setAttribute('src', data[i].img); //toma la source de la imagen
         newBtn.appendChild(newImg); //dice que la imagen esta dentro del boton
@@ -34,21 +33,21 @@ function createCard (data){
 //todos por defecto
 createCard(POKEMON);
 
-function createOverCard(data){
+function createOverCard(data) {
     for (let i = 0; i < data.length; i++){
-        let divOne = document.createElement("div");
-        divOne.setAttribute("class", "contImg");
-        divOne.setAttribute("id", data[i].id)
-        let btnCerrar = document.createElement("button");
-        let btnX = document.createTextNode("X");
+        let divOne = document.createElement('div');
+        divOne.setAttribute('class', 'contImg');
+        divOne.setAttribute('id', data[i].id)
+        let btnCerrar = document.createElement('button');
+        let btnX = document.createTextNode('X');
         btnCerrar.appendChild(btnX);
-        divOne.appendChild(btnCerrar)
-        let pkmImg = document.createElement("img");
-        pkmImg.setAttribute("src", data[i].img);
+        divOne.appendChild(btnCerrar);
+        let pkmImg = document.createElement('img');
+        pkmImg.setAttribute('src', data[i].img);
         divOne.appendChild(pkmImg);
         let nameP = document.createElement('p'); 
-        let namePokemon = document.createTextNode(data[i].name +" "+ data[i].num ); 
-        nameP.setAttribute("id", "name");
+        let namePokemon = document.createTextNode(data[i].name +" "+ data[i].num); 
+        nameP.setAttribute('id', 'name');
         nameP.appendChild(namePokemon);
         divOne.appendChild(nameP);
         let typePokemon = document.createTextNode(data[i].type);
@@ -57,29 +56,29 @@ function createOverCard(data){
         divOne.appendChild(typePkm);
         let fortePokemon = document.createTextNode(fortaleza);
         let frtPkm = document.createElement('p');
-        frtPkm.setAttribute("class", "strength")
+        frtPkm.setAttribute('class', 'strength')
         frtPkm.appendChild(fortePokemon);        
         divOne.appendChild(frtPkm);
         let weakPokemon = document.createTextNode(data[i].weaknesses);
         let wkPkm = document.createElement('p');
-        wkPkm.setAttribute("class", "weakness")
+        wkPkm.setAttribute('class', 'weakness')
         wkPkm.appendChild(weakPokemon);        
         divOne.appendChild(wkPkm);       
         
         overlay.appendChild(divOne);
     }
-    document.querySelector(".contImg button").addEventListener("click", () =>{
+    document.querySelector('.contImg button').addEventListener("click", () =>{
         overlay.innerHTML = ""
-        overlay.classList.remove("activo")
+        overlay.classList.remove('activo')
     })
 }  
 // Filtrado por Tipo
 
-document.querySelectorAll(".typeOption button").forEach((elemento) => {
+document.querySelectorAll('.typeOption button').forEach((elemento) => {
     elemento.addEventListener("click", () => {
         let valor = elemento.value;
         main.innerHTML = ""   
-        let pkmType = filtradoTypo(valor);
+        const pkmType = filtradoTypo(valor);
         console.log(pkmType);
         createCard(pkmType);
     })
@@ -87,7 +86,7 @@ document.querySelectorAll(".typeOption button").forEach((elemento) => {
 
 // Filtrado por Debilidad
 
-document.querySelectorAll(".typeWeakness button").forEach((elemento) => {
+document.querySelectorAll('.typeWeakness button').forEach((elemento) => {
     elemento.addEventListener("click", () => {
         let valor = elemento.value;
         main.innerHTML = ""   
@@ -98,10 +97,10 @@ document.querySelectorAll(".typeWeakness button").forEach((elemento) => {
 });
 
 //listener para las imagenes para overlay
-document.querySelectorAll("#all .indPkm").forEach((elemento) => {
+document.querySelectorAll('#all .indPkm').forEach((elemento) => {
     elemento.addEventListener("click", () => {
-        console.log("onCLick()");
-        let imgOver = elemento.getAttribute("name");
+        console.log('onCLick()');
+        let imgOver = elemento.getAttribute('name');
         function filtroOver (valor){
             return POKEMON.filter(pkm => (pkm.name === valor))}
         let pkmOver = filtroOver(imgOver);
@@ -125,7 +124,7 @@ btnTipo.addEventListener("click", () => {
     optionList = document.getElementById("typeOption");
     optionList.style.display = "block";
     let btn2 = document.createElement("button")
-    let btnText = document.createTextNode("^")
+    let btnText = document.createTextNode('^')
     btn2.appendChild(btnText);
     bynTipo.appendChild(btn2)
     btn2.addEventListener("click", () => {
