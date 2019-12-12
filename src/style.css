@@ -67,6 +67,7 @@ nav {
     position: relative;
     max-width: 40px;
 }
+
 ul, ol {
     list-style: none;
 } 
@@ -85,6 +86,11 @@ ul, ol {
     text-decoration: none;
     padding: 10px 15px;       
 }
+.menuIcon2 {
+    display: none;
+    margin-bottom: 20px;
+}
+/*
 .subnavi a:hover{
     background-color: #f39368; 
 }
@@ -93,6 +99,7 @@ ul, ol {
     flex-direction: column;
     align-self: flex-start;
 }
+*/
 nav .barra-busqueda {
     width: 60%;
     background-color: white;

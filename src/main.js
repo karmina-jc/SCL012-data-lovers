@@ -137,3 +137,20 @@ btnTipo.addEventListener("click", () => {
         optionList.style.display = "none"
     })
 });
+
+const menuImg = document.getElementById("menuImg");
+const menuList = document.getElementById("subnavi");
+const menuImg2 = document.getElementById("menuImg2");
+menuImg.addEventListener("click", () => {
+    menuImg2.style.display = "flex";
+    menuList.style.display = "block";
+    menuImg.style.display = "none";
+});
+
+menuImg2.addEventListener("click", () => {
+    
+    menuList.style.display = "none";
+    menuImg.style.display = "flex";
+    menuImg2.style.display = "none";
+
+})
