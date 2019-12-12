@@ -29,7 +29,7 @@ function createCard (data){
         main.appendChild(newBtn);
     };
 };
-
+// overlay card, la ventana que se abre al click pokemon
 function createOverCard(data){
     for (let i = 0; i < data.length; i++){
         let divOne = document.createElement("div");
@@ -91,7 +91,6 @@ for (let i = 0; i < POKEMON.length; i++) {
 }
 
 // Filtrado
-
 document.querySelectorAll(".typeOption button").forEach((elemento) => {
     elemento.addEventListener("click", () => {
         let valor = elemento.value;
@@ -114,18 +113,27 @@ document.querySelectorAll("#all .indPkm").forEach((elemento)=>{
         createOverCard(pkmOver);
     })
 });
-
+// ordenar por A-Z, Z-A, numero decreciente
 const sortData = document.getElementById("sortData");
-
 sortData.addEventListener("change", () => {
     let dato = document.getElementById("sortData").value;
     main.innerHTML = "";
     let pkmSort = sortBy(dato);
     console.log(pkmSort)
     
-})
-/*btnTipo = document.getElementById("filterType")
-
-btnTipo.addEventListener("clik", () =>{
-
-}) */
+});
+// muestra el listado de los tipos de Pokemon del filter sidebar
+const btnTipo = document.getElementById("filterType");
+const divBtn = document.getElementById("botonFiltro");
+btnTipo.addEventListener("click", () => {
+    let optionList = document.getElementById("typeOption");
+    optionList.style.display = "block";
+    let btn2 = document.createElement("button")
+    let btnText = document.createTextNode("^")
+    btn2.setAttribute("class", "closeFilter");
+    btn2.appendChild(btnText);
+    divBtn.appendChild(btn2);
+    btn2.addEventListener("click", () =>{
+        optionList.style.display = "none"
+    })
+});

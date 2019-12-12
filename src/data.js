@@ -1,15 +1,13 @@
 /* Manejo de data */
 import POKEMON from './data/pokemon/pokemon.js'
 
-
-// Funcion fultrado
+// Funcion filtrado
 export function filtrado (valor){
   let pkmType = POKEMON.filter(pkm => (pkm.type.includes(valor)));
   return pkmType;   
 }; 
 
-
-// sort by numero decreciente
+// sort 
 export function sortBy (dato){
   if (dato === "number"){
     POKEMON.sort(function sortNumDesc (a, b){
