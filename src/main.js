@@ -1,6 +1,7 @@
 import POKEMON from './data/pokemon/pokemon.js';
 console.log(POKEMON);
-import{filtrado}from './data.js';
+import{filtradoTypo}from './data.js';
+import{filtradoWeakness}from './data.js';
 import{sortBy}from './data.js';
 
 /* muestra los objetos */
@@ -29,7 +30,10 @@ function createCard (data){
         main.appendChild(newBtn);
     };
 };
-// overlay card, la ventana que se abre al click pokemon
+
+//todos por defecto
+createCard(POKEMON);
+
 function createOverCard(data){
     for (let i = 0; i < data.length; i++){
         let divOne = document.createElement("div");
@@ -69,40 +73,32 @@ function createOverCard(data){
         overlay.classList.remove("activo")
     })
 }  
-//todos por defecto
-for (let i = 0; i < POKEMON.length; i++) {
-    let newBtn = document.createElement('button'); // crea boton
-    newBtn.setAttribute('class', 'indPkm'); //da clase al boton
-    newBtn.setAttribute("name", POKEMON[i].name)
-    let newImg = document.createElement('img'); //crea una imagen
-    let imgPokemon = (POKEMON[i].img); // toma la imagen desde la base de datos
-    newImg.setAttribute('src', imgPokemon); //toma la source de la imagen
-    newBtn.appendChild(newImg); //dice que la imagen esta dentro del boton
-    let nameP = document.createElement('p'); // crea un <p>
-    let namePokemon = document.createTextNode(POKEMON[i].name); // tome el nombre desde la base de datos
-    nameP.appendChild(namePokemon);//pone el nombre en el <p> creado
-    newBtn.appendChild(nameP); //dice que el nombre esta dentro del boton
-    let numberP = document.createElement('p');
-    let numberPokemon = document.createTextNode(POKEMON[i].num);
-    numberP.appendChild(numberPokemon);
-    newBtn.appendChild(numberP)
+// Filtrado por Tipo
 
-    main.appendChild(newBtn);
-}
-
-// Filtrado
 document.querySelectorAll(".typeOption button").forEach((elemento) => {
     elemento.addEventListener("click", () => {
         let valor = elemento.value;
         main.innerHTML = ""   
-        let pkmType = filtrado(valor);
+        let pkmType = filtradoTypo(valor);
         console.log(pkmType);
         createCard(pkmType);
     })
 });
 
-//listener para las imagenes
-document.querySelectorAll("#all .indPkm").forEach((elemento)=>{
+// Filtrado por Debilidad
+
+document.querySelectorAll(".typeWeakness button").forEach((elemento) => {
+    elemento.addEventListener("click", () => {
+        let valor = elemento.value;
+        main.innerHTML = ""   
+        let pkmWeak = filtradoWeakness(valor);
+        console.log(pkmWeak);
+        createCard(pkmWeak);
+    })
+});
+
+//listener para las imagenes para overlay
+document.querySelectorAll("#all .indPkm").forEach((elemento) => {
     elemento.addEventListener("click", () => {
         console.log("onCLick()");
         let imgOver = elemento.getAttribute("name");
@@ -113,44 +109,26 @@ document.querySelectorAll("#all .indPkm").forEach((elemento)=>{
         createOverCard(pkmOver);
     })
 });
-// ordenar por A-Z, Z-A, numero decreciente
+
+//ordenar por
 const sortData = document.getElementById("sortData");
 sortData.addEventListener("change", () => {
     let dato = document.getElementById("sortData").value;
     main.innerHTML = "";
-    let pkmSort = sortBy(dato);
-    console.log(pkmSort)
+    sortBy(dato);
+    createCard(POKEMON);
     
-});
-// muestra el listado de los tipos de Pokemon del filter sidebar
+})
 const btnTipo = document.getElementById("filterType");
-const divBtn = document.getElementById("botonFiltro");
-btnTipo.addEventListener("click", () => {
-    let optionList = document.getElementById("typeOption");
+btnTipo.addEventListener("click", () => {    
+    optionList = document.getElementById("typeOption");
     optionList.style.display = "block";
     let btn2 = document.createElement("button")
     let btnText = document.createTextNode("^")
-    btn2.setAttribute("class", "closeFilter");
     btn2.appendChild(btnText);
-    divBtn.appendChild(btn2);
-    btn2.addEventListener("click", () =>{
+    bynTipo.appendChild(btn2)
+    btn2.addEventListener("click", () => {
         optionList.style.display = "none"
     })
-});
-
-const menuImg = document.getElementById("menuImg");
-const menuList = document.getElementById("subnavi");
-const menuImg2 = document.getElementById("menuImg2");
-menuImg.addEventListener("click", () => {
-    menuImg2.style.display = "flex";
-    menuList.style.display = "block";
-    menuImg.style.display = "none";
-});
-
-menuImg2.addEventListener("click", () => {
     
-    menuList.style.display = "none";
-    menuImg.style.display = "flex";
-    menuImg2.style.display = "none";
-
-})
+});

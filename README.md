@@ -15,23 +15,24 @@
 
 ## 1. Preámbulo
 
-Pokémon GO es una experiencia de juego internacional  y ha sido nombrada "el mejor juego para móviles". El objetivo de la web ofrecer información detallada sobre los Pokemones y que sea fácil de acceder.
+Pokémon GO es una experiencia de juego internacional y ha sido nombrada "el mejor juego para móviles". El objetivo de nuestra web es ofrecer información detallada sobre los Pokemones y con un facil acceso.
 
 ## 2. Definición de usuario
 
 La estadística realizada por statista.com muestra que en Latino America existe 44 millones de usuarios de Pokemon Go. (foto grafico statista)
 ![Statista.com](src/media/pokemon-users-wordwide.jpg "Statista")
 
-Según las estadísticas de comScore Pokémon Go realizadas al principio del año 2017, el 60% de la audiencia tenía entre 18 y 34 años (los Millennials, pero podríamos argumentar que una buena parte de ellos sería Gen Z también si adoptamos la medida 1981-1996 ).
+Según las estadísticas de comScore Pokémon Go realizadas al principio del año 2017, el 60% de la audiencia tenía entre 18 y 34 años (los que se encontrarian entre el rango de los llamados Millennials y una parte de la Gen Z que abarca entre 1981-1996).
+
 ![comscore.com](src/media/Pokemon-Go-users.jpg "comscore")
 
- Apptopia informó a mediados de 2017 que el 57.4% de los jugadores de Pokémon Go eran hombres, también encontró un porcentaje más bajo de usuarios Millennials (en este caso usando 19-34 como medida), reportando 38%. Otro 32% tenía menos de 18 años, lo que le dio al juego una división fascinante en términos de los grupos de edad de los usuarios de Pokémon Go. Una pequeña encuesta de los Estados Unidos realizada por Inc. y publicada en agosto de 2016 encontró una división de género similar; 59% hombres y 41% mujeres. Este estudio estableció la edad promedio de los jugadores de Pokémon Go en 29, y encontró un ingreso familiar promedio de $ 52,430
+ Apptopia informó a mediados de 2017 que el 57.4% de los jugadores de Pokémon Go eran hombres, también encontró un porcentaje más bajo de usuarios Millennials, siendo un 38%. Otro 32% tenía menos de 18 años, lo que le dio al juego una división fascinante en términos de los grupos de edad de los usuarios de Pokémon Go. Una pequeña encuesta de los Estados Unidos realizada por Inc. y publicada en agosto de 2016 encontró una división de género similar; 59% hombres y 41% mujeres. Este estudio estableció la edad promedio de los jugadores de Pokémon Go en 29 años, y encontró un ingreso familiar promedio de US$52,430
  ![Apptopia](src/media/pokemon-go-demographics.jpg "Apptopia")
 
 ### Historia de usuario:
 
-* Usuario nr 1:
-  * Lleva poco tiempo jugando y quiere empezar a combatir.
+* Usuario N° 1:
+  * EL usuario lleva poco tiempo jugando y quiere empezar a combatir.
   * Entra a nuestra página para buscar información sobre fortaleza y debilidades de los Pokemones que tiene y así saber cuál se sirve para el combate.
 
 ## 3. Definición UX
@@ -50,8 +51,7 @@ La web es una enciclopedia de los Pokemones, contiene listado de los Pokemones y
 
 
 ### Planificación
-La planificación de las  tareas  se han definido usando Trello 
-[Trello](https://trello.com/b/P7UBUevO/deta-lover).
+La planificación de las  tareas  se han definido usando [Trello](https://trello.com/b/P7UBUevO/deta-lover).
 
 
 ### Decisiones de diseño
