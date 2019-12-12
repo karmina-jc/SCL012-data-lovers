@@ -119,15 +119,31 @@ sortData.addEventListener("change", () => {
     
 })
 const btnTipo = document.getElementById("filterType");
+const btntipo2 = document.getElementById('filterType2');
+const btnWkn = document.getElementById('"filterWeakness"')
+const btnWkn2 = document.getElementById('"filterWeakness2"')
+
 btnTipo.addEventListener("click", () => {    
-    optionList = document.getElementById("typeOption");
-    optionList.style.display = "block";
-    let btn2 = document.createElement("button")
-    let btnText = document.createTextNode('^')
-    btn2.appendChild(btnText);
-    bynTipo.appendChild(btn2)
-    btn2.addEventListener("click", () => {
-        optionList.style.display = "none"
-    })
-    
+    const optionList = document.getElementById("typeOption");
+    optionList.style.display = 'block';
+    btntipo2.style.display = 'block';  
+    btnTipo.style.display = 'none';
+});
+
+btnTipo2.addEventListener("click", () => {    
+    optionList.style.display = 'none';    
+    btnTipo.style.display = 'block';
+    btntipo2.style.display = 'none';
+});
+btnWkn.addEventListener("click", () => {    
+    const optionList = document.getElementById("typeWeakness");
+    optionList.style.display = 'block';
+    btnWkn2.style.display = 'block';  
+    btnWkn.style.display = 'none';
+});
+
+btnWkn2.addEventListener("click", () => {    
+    optionList.style.display = 'none';    
+    btnWkn.style.display = 'block';
+    btnWkn2.style.display = 'none';
 });
