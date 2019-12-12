@@ -112,7 +112,6 @@ document.querySelectorAll("#all .indPkm").forEach((elemento) => {
 
 //ordenar por
 const sortData = document.getElementById("sortData");
-
 sortData.addEventListener("change", () => {
     let dato = document.getElementById("sortData").value;
     main.innerHTML = "";
