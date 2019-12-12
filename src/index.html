@@ -15,13 +15,13 @@
             </div>
       <!-- menu-->
            <div class="menuBar">
-              <img src="menuImg/menu-icon36x36.png" class="menuIcon">
-            
+              <img src="menuImg/menu-icon36x36.png" class="menuIcon" id="menuImg">
+              <img src="menuImg/menu-icon36x36B.png" class="menuIcon2" id="menuImg2">
         <!--search bar-->
         <form action="">
             <input type="search" class="barra-busqueda" id="barraBusqueda" placeholder="Buscar">
           </form>
-              <div class="subnavi">
+              <div class="subnavi" id="subnavi">
                  <ul >
                   <li><a href="">Pokemones</a></li>                         
                   <li><a href="">Nosotros</a></li>
@@ -35,10 +35,13 @@
     <section id="todos">
       <!-- filter sidebar -->
       <aside>
-        <h4 style="color: #ef6a2f;">FILTRAR POR:</h4>
+        <h4>FILTRAR POR:</h4>
          <ul class="filterList">
-            <li><button id="filterType" class="btn">Tipo</button></li>
-            <ul class = "typeOption">
+          
+            <div class="botonFiltro" id="botonFiltro">
+              <li><button id="filterType" class="btn">Tipo</button></li>
+            </div>
+            <ul class ="typeOption" id="typeOption">
               <li><button id="typeGrass" value="Grass">Planta</button></li>
               <li><button id="typePoison" value="Poison">Veneno</button></li>
               <li><button id="typeFire" value="Fire">Fuego</button></li>
