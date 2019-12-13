@@ -17,20 +17,20 @@ a {
     font-family: 'Rajdhani Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Rajdhani Regular'), url('Rajdhani-Regular.woff') format('woff');
+    src: local('Rajdhani Regular'), url('src/media/Rajdhani-Regular.woff') format('woff');
     }
 /* HEADINGS TYPOGRAPHY */
 @font-face {
     font-family: 'Play Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Play Regular'), url('Play-Regular.woff') format('woff');
+    src: local('Play Regular'), url('src/media/Play-Regular.woff') format('woff');
     }
 @font-face {
     font-family: 'Play Bold';
     font-style: normal;
     font-weight: normal;
-    src: local('Play Bold'), url('Play-Bold.woff') format('woff');
+    src: local('Play Bold'), url('src/media/Play-Bold.woff') format('woff');
     }
     P, select {
         font-family: Rajdhani Regular;
