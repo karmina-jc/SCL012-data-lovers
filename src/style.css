@@ -139,6 +139,7 @@ section{
     display: flex;
     flex-flow: column wrap;
     align-items: stretch;
+    border-radius: 10px;
     border: 1px solid black;
     margin: 5px;
     
