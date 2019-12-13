@@ -1,28 +1,28 @@
 import POKEMON from './data/pokemon/pokemon.js';
-import {filtradoTypo} from './data.js';
-import {filtradoWeakness} from './data.js';
-import {sortBy} from './data.js';
+import { filtradoTypo } from './data.js';
+import { filtradoWeakness } from './data.js';
+import { sortBy } from './data.js';
 
 /* muestra los objetos */
-//const section = document.getElementById("todos");
-const main = document.getElementById("all")
-const overlay = document.getElementById("overlay");
-const fortaleza = ["Ground", "Rock", "water"]
+//const section = document.getElementById("todos"); 
+const main = document.getElementById('all')
+const overlay = document.getElementById('overlay');
+const fortaleza = ['Ground', 'Rock', 'water']
 
 function createCard(data) {
     for (let i = 0; i < data.length; i++) {
-        let newBtn = document.createElement('button'); // crea boton
+        const newBtn = document.createElement('button'); // crea boton
         newBtn.setAttribute('class','indPkm'); //da clase al boton
         newBtn.setAttribute('name', data[i].name)
-        let newImg = document.createElement('img'); //crea una imagen
+        const newImg = document.createElement('img'); //crea una imagen
         newImg.setAttribute('src', data[i].img); //toma la source de la imagen
         newBtn.appendChild(newImg); //dice que la imagen esta dentro del boton
-        let nameP = document.createElement('p'); // crea un <p>
-        let namePokemon = document.createTextNode(data[i].name); // tome el nombre desde la base de datos
+        const nameP = document.createElement('p'); // crea un <p>
+        const namePokemon = document.createTextNode(data[i].name); // tome el nombre desde la base de datos
         nameP.appendChild(namePokemon);//pone el nombre en el <p> creado
         newBtn.appendChild(nameP); //dice que el nombre esta dentro del boton
-        let numberP = document.createElement('p');
-        let numberPokemon = document.createTextNode(data[i].num);
+        const numberP = document.createElement('p');
+        const numberPokemon = document.createTextNode(data[i].num);
         numberP.appendChild(numberPokemon);
         newBtn.appendChild(numberP);
 
@@ -30,11 +30,11 @@ function createCard(data) {
     };
 };
 
-//todos por defecto
+//todos por defecto 
 createCard(POKEMON);
 
 function createOverCard(data) {
-    for (let i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++) {
         let divOne = document.createElement('div');
         divOne.setAttribute('class', 'contImg');
         divOne.setAttribute('id', data[i].id)
@@ -67,100 +67,99 @@ function createOverCard(data) {
         
         overlay.appendChild(divOne);
     }
-    document.querySelector('.contImg button').addEventListener("click", () =>{
-        overlay.innerHTML = ""
+    document.querySelector('.contImg button').addEventListener('click', () => {
+        overlay.innerHTML = ''
         overlay.classList.remove('activo')
     })
 }  
-// Filtrado por Tipo
+// Filtrado por Tipo 
 
 document.querySelectorAll('.typeOption button').forEach((elemento) => {
-    elemento.addEventListener("click", () => {
+    elemento.addEventListener('click', () => {
         let valor = elemento.value;
-        main.innerHTML = ""   
+        main.innerHTML = ''   
         const pkmType = filtradoTypo(valor);
         console.log(pkmType);
         createCard(pkmType);
     })
 });
 
-// Filtrado por Debilidad
+// Filtrado por Debilidad 
 
 document.querySelectorAll('.typeWeakness button').forEach((elemento) => {
-    elemento.addEventListener("click", () => {
+    elemento.addEventListener('click', () => {
         let valor = elemento.value;
-        main.innerHTML = ""   
+        main.innerHTML = ''   
         let pkmWeak = filtradoWeakness(valor);
         console.log(pkmWeak);
         createCard(pkmWeak);
     })
-});
+})
 
-//listener para las imagenes para overlay
+//listener para las imagenes para overlay 
 document.querySelectorAll('#all .indPkm').forEach((elemento) => {
-    elemento.addEventListener("click", () => {
+    elemento.addEventListener('click', () => {
         console.log('onCLick()');
         let imgOver = elemento.getAttribute('name');
-        function filtroOver (valor){
-            return POKEMON.filter(pkm => (pkm.name === valor))}
+        function filtroOver (valor) {
+            return POKEMON.filter(pkm => (pkm.name === valor)) } 
         let pkmOver = filtroOver(imgOver);
         overlay.classList.add('activo');
         createOverCard(pkmOver);
     })
-});
+})
 
-//ordenar por
-const sortData = document.getElementById("sortData");
-sortData.addEventListener("change", () => {
-    let dato = document.getElementById("sortData").value;
-    main.innerHTML = "";
+//ordenar por 
+const sortData = document.getElementById('sortData');
+sortData.addEventListener('change', () => {
+    let dato = document.getElementById('sortData').value;
+    main.innerHTML = '';
     sortBy(dato);
-    createCard(POKEMON);
-    
-})
-
-const menuImg = document.getElementById("menuImg");
-const menuList = document.getElementById("subnavi");
-const menuImg2 = document.getElementById("menuImg2");
-menuImg.addEventListener("click", () => {
-    menuImg2.style.display = "flex";
-    menuList.style.display = "block";
-    menuImg.style.display = "none";
+    createCard(POKEMON);    
 });
-menuImg2.addEventListener("click", () => {
-    menuList.style.display = "none";
-    menuImg.style.display = "flex";
-    menuImg2.style.display = "none";
+
+const menuImg = document.getElementById('menuImg');
+const menuList = document.getElementById('subnavi');
+const menuImg2 = document.getElementById('menuImg2');
+menuImg.addEventListener('click', () => {
+    menuImg2.style.display = 'flex';
+    menuList.style.display = 'block';
+    menuImg.style.display = 'none';
+});
+menuImg2.addEventListener('click', () => {
+    menuList.style.display = 'none';
+    menuImg.style.display = 'flex';
+    menuImg2.style.display = 'none';
 })
 
-const btnTipo = document.getElementById("filterType");
-const btntipo2 = document.getElementById("filterType2");
-const btnWkn = document.getElementById("filterWeakness")
-const btnWkn2 = document.getElementById("filterWeakness2")
+const btnTipo = document.getElementById('filterType');
+const btntipo2 = document.getElementById('filterType2');
+const btnWkn = document.getElementById('filterWeakness');
+const btnWkn2 = document.getElementById('filterWeakness2');
 
-btnTipo.addEventListener("click", () => {    
-    let optionList = document.getElementById("typeOption");
+btnTipo.addEventListener('click', () => {    
+    let optionList = document.getElementById('typeOption');
     optionList.style.display = 'block';
     btntipo2.style.display = 'block';  
     btnTipo.style.display = 'none';
 });
 
-btntipo2.addEventListener("click", () => {    
-    let optionList = document.getElementById("typeOption")
+btntipo2.addEventListener('click', () => {    
+    let optionList = document.getElementById('typeOption');
     optionList.style.display = 'none';    
     btnTipo.style.display = 'block';
     btntipo2.style.display = 'none';
 });
-btnWkn.addEventListener("click", () => {    
-    let optionList = document.getElementById("typeWeakness");
+btnWkn.addEventListener('click', () => {    
+    let optionList = document.getElementById('typeWeakness');
     optionList.style.display = 'block';
-    btnWkn2.style.display = 'block';  
+    btnWkn2.style.display = 'block';
     btnWkn.style.display = 'none';
 });
 
-btnWkn2.addEventListener("click", () => {
-    let optionList = document.getElementById("typeWeakness");    
-    optionList.style.display = 'none';    
+btnWkn2.addEventListener('click', () => {
+    let optionList = document.getElementById('typeWeakness');    
+    optionList.style.display = 'none';
     btnWkn.style.display = 'block';
     btnWkn2.style.display = 'none';
 });
