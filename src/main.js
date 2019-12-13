@@ -118,31 +118,48 @@ sortData.addEventListener("change", () => {
     createCard(POKEMON);
     
 })
+
+const menuImg = document.getElementById("menuImg");
+const menuList = document.getElementById("subnavi");
+const menuImg2 = document.getElementById("menuImg2");
+menuImg.addEventListener("click", () => {
+    menuImg2.style.display = "flex";
+    menuList.style.display = "block";
+    menuImg.style.display = "none";
+});
+menuImg2.addEventListener("click", () => {
+    menuList.style.display = "none";
+    menuImg.style.display = "flex";
+    menuImg2.style.display = "none";
+})
+
 const btnTipo = document.getElementById("filterType");
-const btntipo2 = document.getElementById('filterType2');
-const btnWkn = document.getElementById('"filterWeakness"')
-const btnWkn2 = document.getElementById('"filterWeakness2"')
+const btntipo2 = document.getElementById("filterType2");
+const btnWkn = document.getElementById("filterWeakness")
+const btnWkn2 = document.getElementById("filterWeakness2")
 
 btnTipo.addEventListener("click", () => {    
-    const optionList = document.getElementById("typeOption");
+    let optionList = document.getElementById("typeOption");
     optionList.style.display = 'block';
     btntipo2.style.display = 'block';  
     btnTipo.style.display = 'none';
 });
 
-btnTipo2.addEventListener("click", () => {    
+btntipo2.addEventListener("click", () => {    
+    let optionList = document.getElementById("typeOption")
     optionList.style.display = 'none';    
     btnTipo.style.display = 'block';
     btntipo2.style.display = 'none';
 });
 btnWkn.addEventListener("click", () => {    
-    const optionList = document.getElementById("typeWeakness");
+    let optionList = document.getElementById("typeWeakness");
     optionList.style.display = 'block';
     btnWkn2.style.display = 'block';  
     btnWkn.style.display = 'none';
 });
 
-btnWkn2.addEventListener("click", () => {    
+btnWkn2.addEventListener("click", () => {
+    let optionList = document.getElementById("typeWeakness");    
     optionList.style.display = 'none';    
     btnWkn.style.display = 'block';
     btnWkn2.style.display = 'none';

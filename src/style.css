@@ -198,9 +198,13 @@ aside .typeWeakness button{
 aside .typeWeaknes button:hover{
     background-color: #616161;
 }
- 
 aside #filterWeakness2{
     display: none;
+}
+aside .typeWeakness {
+    display: none;
+    padding-left: 15%;
+
 }   
 aside h4 {
     color: #ef6a2f;
