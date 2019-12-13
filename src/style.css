@@ -194,7 +194,7 @@ aside .typeWeakness button{
     display: flex;
     justify-self: flex-end;
     border: none;  
-    display: none;      
+          
 }
 aside .typeWeaknes button:hover{
     background-color: #616161;
