@@ -67,7 +67,10 @@ nav {
     position: relative;
     max-width: 40px;
 }
-
+.menuIcon2 {
+    display: none;
+    margin-bottom: 20px;
+}
 ul, ol {
     list-style: none;
 } 
@@ -86,20 +89,7 @@ ul, ol {
     text-decoration: none;
     padding: 10px 15px;       
 }
-.menuIcon2 {
-    display: none;
-    margin-bottom: 20px;
-}
-/*
-.subnavi a:hover{
-    background-color: #f39368; 
-}
-.menuBar:hover .subnavi {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-}
-*/
+
 nav .barra-busqueda {
     width: 60%;
     background-color: white;
@@ -109,6 +99,7 @@ nav .barra-busqueda {
     margin-top: 5px;
     position: absolute;
 }
+
 /* POKEMMON SECTION */
 section{
     display: flex;
@@ -119,19 +110,14 @@ section{
     display: flex;
     align-self: flex-start;
     order: 1;
-    align-self: flex-start;
-   
-}
-.fullMain {
-    display: flex;
-    flex-flow: column wrap;
+    align-self: flex-start;   
 }
 .title {
     display: flex;
     order: 0;
     flex-flow: column wrap;
 }
-
+/*BARRA ORDENAR POR*/
 .title .sortData {
     display: flex;
     order: 1;
@@ -141,7 +127,10 @@ section{
     background-color: #313131;
     padding: 5px;
 }
-main {
+.fullMain {
+    display: flex;
+    flex-flow: column wrap;
+}main {
     display: flex;
     align-self: flex-start;
     flex-flow: row wrap;
@@ -177,16 +166,13 @@ aside .btn{
 aside .btn:hover{
     background-color: #616161;    
 }
+aside #filterType2{
+    display: none;
+}
 aside .typeOption {
     display: none;
     padding-left: 15%;
 }
-/*aside .btn:hover .typeOption a{
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-}*/
-
 aside .typeOption button{
     font-family: Rajdhani;
     text-decoration: none;
@@ -199,12 +185,23 @@ aside .typeOption button{
 aside .typeOption button:hover{
     background-color: #616161;
 }
-aside .closeFilter {
+aside .typeWeakness button{
+    font-family: Rajdhani;
+    text-decoration: none;
+    background: #313131;
     color: #ef6a2f;
-    background-color: #313131;
-    font-size: 15px;
-    margin-left: 15%;
+    display: flex;
+    justify-self: flex-end;
+    border: none;  
+          
 }
+aside .typeWeaknes button:hover{
+    background-color: #616161;
+}
+ 
+aside #filterWeakness2{
+    display: none;
+}   
 aside h4 {
     color: #ef6a2f;
     padding-bottom: 10px;
