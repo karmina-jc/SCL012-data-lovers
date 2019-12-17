@@ -19,22 +19,24 @@ export function filtradoWeakness(valor) {
 } */
 
 // sort by numero decreciente
-export function sortBy(POKEMON, dato) {
+export function sortBy(dato) {
   if (dato === 'number') {
-    POKEMON.sort(function sortNumDesc(a, b) {
-      return b.num - a.num;
-    });
+    const numOrder = POKEMON.sort((a, b) => (b.num - a.num));
+    return numOrder;
   }
   if (dato === 'aToZ') {
-    POKEMON.sort(function sortNameAZ(a, b) {
+    const azOrder = POKEMON.sort((a, b) => {
       if (a.name < b.name) { return -1; }
       if (a.name > b.name) { return 1; }
+      return azOrder;
     });
   }
   if (dato === 'ZtoA') {
-    POKEMON.sort(function sortNameZA(a, b) {
+    const zaOrder = POKEMON.sort((a, b) => {
       if (b.name < a.name) { return -1; }
       if (b.name > a.name) { return 1; }
+      return zaOrder;
     });
   }
+
 }

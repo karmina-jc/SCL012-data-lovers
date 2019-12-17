@@ -1,7 +1,5 @@
 import POKEMON from './data/pokemon/pokemon.js';
-import { filtradoTypo } from './data.js';
-import { filtradoWeakness } from './data.js';
-import { sortBy } from './data.js';
+import { filtradoTypo, filtradoWeakness, sortBy } from './data.js';
 
 /* muestra los objetos */
 const main = document.getElementById('all');

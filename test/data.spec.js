@@ -1,11 +1,9 @@
-import POKEMON from './data/pokemon/pokemon.js';
-import { filtradoTypo } from './data.js';
-import { filtradoWeakness } from './data.js';
-import { sortBy } from './data.js';
+import POKEMON from '../src/data/pokemon/pokemon.js';
+import { filtradoTypo, filtradoWeakness, sortBy } from '../src/data.js';
 
 describe('data-lover', () => {
   it('debería ser un objeto', () => {
-    assert.equal(typeof POKEMON, 'object');
+    expect(typeof POKEMON).toBe('object');
   });
   describe('funcion filtrado por tipo', () => {
     it('debería ser una función', () => {
@@ -31,24 +29,24 @@ describe('data-lover', () => {
     });
     it('debería retornar "Butterfree" para wknPkm[5].num con filtrado por tipo debilidad contra Fire', () => {
       const wknPkm = filtradoWeakness('Fire');
-      expect(wknPkm[5].num).toBe('Butterfree');
+      expect(wknPkm[5].name).toBe('Butterfree');
     });
   });
-  describe('funcion filtrado Ordenar por', () => {
+  describe('funcion Ordenar por', () => {
     it('debería ser una función', () => {
       expect(typeof sortBy).toBe('function');
     });
     it('debería retornar "Kabuto" para sortPkm[11].name con Orden por numero decreciente"', () => {
-      const sortPkm = sortBy('number');
-      expect(sortPkm[11].name).toBe('Kabuto');
+      sortBy('number');
+      expect(POKEMON[11].name).toBe('Kabuto');
     });
     it('debería retornar "Arcanine" para sortPkm[4].name con Orden de la A a la Z', () => {
-      const sortPkm = sortBy('aToZ');
-      expect(sortPkm[4].name).toBe('Arcanine');
+      sortBy('aToZ');
+      expect(POKEMON[4].name).toBe('Arcanine');
     });
     it('debería retornar "Ratata" para sortPkm[35].name con Orden de la Z a la A', () => {
-      const sortPkm = sortBy('ZtoA');
-      expect(sortPkm[35].name).toBe('Ratata');
+      sortBy('ZtoA');
+      expect(POKEMON[35].name).toBe('Ratata');
     });
   });
 });
