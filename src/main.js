@@ -3,6 +3,7 @@ import { filtradoTypo } from './data.js';
 import { filtradoWeakness } from './data.js';
 import { sortBy } from './data.js';
 
+/* muestra los objetos */
 const main = document.getElementById('all');
 const overlay = document.getElementById('overlay');
 const fortaleza = ['Ground', 'Rock', 'water'];
