@@ -44,9 +44,9 @@ describe('data-lover', () => {
       sortBy('aToZ');
       expect(POKEMON[4].name).toBe('Arcanine');
     });
-    it('debería retornar "Ratata" para sortPkm[35].name con Orden de la Z a la A', () => {
+    it('debería retornar "Rattata" para sortPkm[35].name con Orden de la Z a la A', () => {
       sortBy('ZtoA');
-      expect(POKEMON[35].name).toBe('Ratata');
+      expect(POKEMON[35].name).toBe('Rattata');
     });
   });
 });

@@ -1,5 +1,7 @@
 import POKEMON from './data/pokemon/pokemon.js';
-import { filtradoTypo, filtradoWeakness, sortBy } from './data.js';
+import {
+  filtradoTypo, filtradoWeakness, filterStrength, sortBy,
+} from './data.js';
 
 /* muestra los objetos */
 const main = document.getElementById('all');
@@ -7,7 +9,7 @@ const overlay = document.getElementById('overlay');
 const fortaleza = ['Ground', 'Rock', 'water'];
 
 function createCard(data) {
-  for (let i = 0; i < data.length; i + 1) {
+  for (let i = 0; i < data.length; i += 1) {
     const newBtn = document.createElement('button');
     newBtn.setAttribute('class', 'indPkm');
     newBtn.setAttribute('name', data[i].name);
@@ -32,7 +34,7 @@ function createCard(data) {
 createCard(POKEMON);
 
 function createOverCard(data) {
-  for (let i = 0; i < data.length; i + 1) {
+  for (let i = 0; i < data.length; i += 1) {
     const divOne = document.createElement('div');
     divOne.setAttribute('class', 'contImg');
     divOne.setAttribute('id', data[i].id);
@@ -83,7 +85,7 @@ document.querySelectorAll('.typeOption button').forEach((elemento) => {
   });
 });
 
-// Filtrado por Debilidad
+// Filtrado "Debil contra"
 
 document.querySelectorAll('.typeWeakness button').forEach((elemento) => {
   elemento.addEventListener('click', () => {
@@ -91,6 +93,17 @@ document.querySelectorAll('.typeWeakness button').forEach((elemento) => {
     main.innerHTML = '';
     const pkmWeak = filtradoWeakness(valor);
     createCard(pkmWeak);
+  });
+});
+
+// filtrado "Fuerte contra"
+
+document.querySelectorAll('.typeStrength button').forEach((elemento) => {
+  elemento.addEventListener('click', () => {
+    const valor = elemento.value;
+    main.innerHTML = '';
+    const pkmStg = filterStrength(valor);
+    createCard(pkmStg);
   });
 });
 
