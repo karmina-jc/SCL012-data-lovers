@@ -1,6 +1,6 @@
 import POKEMON from './data/pokemon/pokemon.js';
 import {
-  filtradoTypo, filtradoWeakness, filterStrength, sortBy,
+  filtradoTypo, filtradoWeakness, filterByNAme, multiplierCP, sortBy,
 } from './data.js';
 
 /* muestra los objetos */
@@ -27,6 +27,45 @@ function createCard(data) {
 
     main.appendChild(newBtn);
   }
+}
+
+// crea calculadora de puntos de combate
+
+function createCalculator() { 
+  const nameCalc = document.createElement('h3');
+  const txtCalc = document.createTextNode('Calculadora de PC');
+  nameCalc.appendChild(txtCalc);
+  main.appendChild(nameCalc);
+  const inputName = document.createElement('input');
+  inputName.setAttribute('class', 'inptxt');
+  inputName.setAttribute('id', 'inpName');
+  inputName.setAttribute('placeholder', 'Ingresa el nombre de tu Pokemon');
+  main.appendChild(inputName);
+  const inputCP = document.createElement('input');
+  inputCP.setAttribute('class', 'inptxt');
+  inputCP.setAttribute('placeholder', 'Ingresa el PC de tu Pokemon');
+  inputCP.setAttribute('id', 'inpCP')
+  main.appendChild(inputCP);  
+  const btnCalcular = document.createElement('button');
+  btnCalcular.setAttribute('class', 'btn')
+  btnMultiplier.setAttribute('id', 'btnMulti')
+  const infCalcular = document.createTextNode('Calcular');
+  btnCalcular.appendChild(infCalcular);
+  main.appendChild(btnCalcular);
+  const outputCP = document.createElement('input');
+  outputCP.setAttribute('class', 'inptxt');
+  outputCP.setAttribute('id', 'outputCP')
+  main.appendChild(outputCP); 
+
+  const btnMulti = document.getElementById('btnMulti')
+
+  btnMulti.addEventListener('click', () => {
+    console.log('Hola')
+    const inputPkmName = document-getElementById('inpName').value;
+    const inputPkmCp = document.getElementById('inpCP').value;
+    const pkmByName = filterByNAme(inputPkmName);
+    multiplierCP(inputPkmCp, pkmByName);
+  })
 }
 
 // todos por defecto
@@ -98,23 +137,21 @@ document.querySelectorAll('.typeWeakness button').forEach((elemento) => {
 
 // filtrado "Fuerte contra"
 
-document.querySelectorAll('.typeStrength button').forEach((elemento) => {
+/* document.querySelectorAll('.typeStrength button').forEach((elemento) => {
   elemento.addEventListener('click', () => {
     const valor = elemento.value;
     main.innerHTML = '';
     const pkmStg = filterStrength(valor);
     createCard(pkmStg);
   });
-});
+}); */
 
-// listener para las imagenes para overlay
+// listener imagenes para overlay
+
 document.querySelectorAll('#all .indPkm').forEach((elemento) => {
   elemento.addEventListener('click', () => {
     const imgOver = elemento.getAttribute('name');
-    function filtroOver(valor) {
-      return POKEMON.filter((pkm) => (pkm.name === valor));
-    }
-    const pkmOver = filtroOver(imgOver);
+    const pkmOver = filterByNAme(imgOver);
     overlay.classList.add('activo');
     createOverCard(pkmOver);
   });
@@ -128,6 +165,18 @@ sortData.addEventListener('change', () => {
   sortBy(dato);
   createCard(POKEMON);
 });
+
+// Calculadora de puntos de combate
+
+const btnMultiplier = document.getElementById('multipliers');
+
+btnMultiplier.addEventListener('click', () => {
+  main.innerHTML = '';
+  createCalculator();
+})
+
+
+
 
 const menuImg = document.getElementById('menuImg');
 const menuList = document.getElementById('subnavi');

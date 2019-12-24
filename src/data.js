@@ -12,7 +12,21 @@ export function filtradoWeakness(valor) {
   return pkmWeak;
 }
 
-export function filterStrength(valor) {
+// funciones de multiplicador de CP
+
+export function filterByNAme(valor) {
+  return POKEMON.filter((pkm) => (pkm.name === valor));
+}
+
+export function multiplierCP (cp, pkmByName) {
+  let multiplicador = pkmByName.filter((pkm) => (pkm.multipliers));
+  console.log(multiplicador)
+  return cp * multiplicador;
+
+}
+
+
+/* export function filterStrength(valor) {
   if (valor === 'Grass') {
     const pkmStg = POKEMON.filter((pkm) => (pkm.type.includes('Flying' || 'Fire' || 'Ice' || 'Bug' || 'Poison')));
     return pkmStg;
@@ -86,7 +100,7 @@ export function filterStrength(valor) {
     return pkmStg;
   }
   return filterStrength;
-}
+} */
 
 // sort by numero decreciente
 export function sortBy(dato) {
