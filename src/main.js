@@ -31,7 +31,7 @@ function createCard(data) {
 
 // crea calculadora de puntos de combate
 
-function createCalculator() { 
+function createCalculator() {
   const nameCalc = document.createElement('h3');
   const txtCalc = document.createTextNode('Calculadora de PC');
   nameCalc.appendChild(txtCalc);

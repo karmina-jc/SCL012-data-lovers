@@ -147,6 +147,29 @@ main {
     padding: 10px;
     font-weight: bold;
 }
+main .inptxt{
+    border-radius: 10px;
+    border-color: none;
+    padding: 10px;
+    margin: 10px;
+    width: 230px;   
+}
+main .btn{
+    color: #ef6a2f;
+    padding: 5px 10px;
+    background-color: #313131;
+    display: flex;
+    justify-self: flex-start;
+    margin: 10px;
+    border: 1px solid #ef6a2f;
+}
+main .btn:hover{
+    background-color: #616161;
+}
+main h3{
+    display: inline;
+    min-width: 80%;       
+}
 /* filter sidebar */
 aside {
     margin: 5px 10px;
